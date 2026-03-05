@@ -536,4 +536,55 @@ h3 {
         align-items: center;
         text-align: center;
     }
+
+    .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .bio-image-wrapper {
+        margin: 0 auto 32px;
+        max-width: 300px;
+    }
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.bio-image-wrapper {
+    position: relative;
+    border-radius: 4px;
+    padding: 12px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.bio-image-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: var(--accent-red);
+    z-index: -1;
+    bottom: -16px;
+    right: -16px;
+    filter: blur(40px);
+    opacity: 0.2;
+}
+
+.bio-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(80%) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.bio-image:hover {
+    filter: grayscale(0%) contrast(1);
 }
