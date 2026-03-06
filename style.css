@@ -488,7 +488,7 @@ h3 {
 .bio-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: #ffffff;
-    margin-bottom: 48px;
+    margin-bottom: 0;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
@@ -536,54 +536,47 @@ h3 {
         text-align: center;
     }
 
-    .bio-grid {
+    .bio-header-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+        margin-bottom: 32px;
     }
 
     .bio-image-wrapper {
-        margin: 0 auto 32px;
+        margin: 0 auto;
         max-width: 300px;
     }
 }
 
-.bio-grid {
+.bio-header-grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 48px;
     align-items: center;
+    margin-bottom: 48px;
 }
 
 .bio-image-wrapper {
     position: relative;
-    border-radius: 4px;
-    padding: 12px;
-    background: #0a0a0a;
-    border: 1px solid #222;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    border-radius: 40px;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    aspect-ratio: 1 / 1;
 }
 
 .bio-image-wrapper::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    background: var(--accent-red);
-    z-index: -1;
-    bottom: -16px;
-    right: -16px;
-    filter: blur(40px);
-    opacity: 0.2;
+    display: none;
 }
 
 .bio-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
     display: block;
-    filter: grayscale(80%) contrast(1.1);
-    transition: filter 0.5s ease;
-}
-
-.bio-image:hover {
-    filter: grayscale(0%) contrast(1);
+    filter: none;
+    transition: none;
 }
