@@ -461,6 +461,10 @@ h3 {
     border: 1px solid #222;
 }
 
+.content-image.size-sm {
+    max-width: 33.333%;
+}
+
 /* --- BIOPGRAPHY SECTION --- */
 .bio-section {
     padding: 100px 0;
