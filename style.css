@@ -448,6 +448,19 @@ h3 {
     }
 }
 
+.content-image-wrapper {
+    margin: 48px 0;
+    text-align: center;
+}
+
+.content-image.radius-medium {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #222;
+}
+
 /* --- BIOPGRAPHY SECTION --- */
 .bio-section {
     padding: 100px 0;
@@ -476,21 +489,25 @@ h3 {
 }
 
 .bio-small-title {
+    grid-area: small-title;
     font-size: 0.85rem;
     color: var(--accent-red);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     font-family: var(--font-mono);
     font-weight: 700;
+    align-self: end;
 }
 
 .bio-title {
+    grid-area: main-title;
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: #ffffff;
     margin-bottom: 0;
     line-height: 1.1;
     letter-spacing: -0.02em;
+    align-self: start;
 }
 
 .bio-content {
@@ -537,15 +554,20 @@ h3 {
     }
 
     .bio-header-grid {
-        grid-template-columns: 120px 1fr;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "small-title"
+            "image"
+            "main-title";
+        gap: 24px;
         margin-bottom: 32px;
         align-items: center;
+        text-align: center;
     }
 
     .bio-image-wrapper {
-        margin: 0;
-        max-width: 120px;
+        margin: 0 auto;
+        max-width: 160px;
         border-radius: 50%;
     }
 
@@ -555,19 +577,23 @@ h3 {
 
     .bio-small-title {
         font-size: 0.70rem;
-        margin-bottom: 12px;
+        margin-bottom: 0px;
     }
 }
 
 .bio-header-grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
-    gap: 48px;
+    grid-template-areas:
+        "image small-title"
+        "image main-title";
+    gap: 16px 48px;
     align-items: center;
     margin-bottom: 48px;
 }
 
 .bio-image-wrapper {
+    grid-area: image;
     position: relative;
     border-radius: 40px;
     padding: 0;
