@@ -537,14 +537,25 @@ h3 {
     }
 
     .bio-header-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 120px 1fr;
+        gap: 20px;
         margin-bottom: 32px;
+        align-items: center;
     }
 
     .bio-image-wrapper {
-        margin: 0 auto;
-        max-width: 300px;
+        margin: 0;
+        max-width: 120px;
+        border-radius: 50%;
+    }
+
+    .bio-title {
+        font-size: 1.8rem;
+    }
+
+    .bio-small-title {
+        font-size: 0.70rem;
+        margin-bottom: 12px;
     }
 }
 
